@@ -19,5 +19,6 @@ $output = $crud->getCustomers();
     <?php  
         echo $output; 
     ?>
+    
 </body>
 </html>
