@@ -25,11 +25,11 @@
         </div>
         <div class="col">
             <select class="form-select" aria-label="State">
-            <option value="OH">Ohio</option>
-            <option value="PA">Pennsylvania</option>
-            <option selected value="MI">Michigan</option>
-            <option value="MO">Missouri</option>
-            <option value="AL">Alabama</option>
+            <option value="OH" aria-label="Ohio">Ohio</option>
+            <option value="PA" aria-label="Pennsylvania">Pennsylvania</option>
+            <option selected value="MI" aria-label="Michigan">Michigan</option>
+            <option value="MO" aria-label="Missouri">Missouri</option>
+            <option value="AL" aria-label="Alabama">Alabama</option>
             </select>
         </div>
         <div class="col">
