@@ -29,6 +29,7 @@
             <option value="OH">Ohio</option>
             <option value="PA">Pennsylvania</option>
             <option value="MO">Missouri</option>
+            <option value="AL">Alabama</option>
             </select>
         </div>
         <div class="col">
