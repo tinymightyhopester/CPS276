@@ -56,7 +56,7 @@
 
         <div class = "row">
         <div class = "col">
-            <button type="submit" class="btn btn-primary" aria-label="Submit">Submit</button>
+            <button type="submit" class="btn btn-primary" aria-label="Submit">Register</button>
         </div>
         </div>
 
