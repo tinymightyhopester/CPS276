@@ -36,6 +36,23 @@
         </div>
         </div><br/>
 
+        <div class="row">
+        <div class="col">
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Male" value="male">
+            <label class="form-check-label" for="Male">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Female" value="female">
+            <label class="form-check-label" for="Female">Female</label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Other" value="other">
+            <label class="form-check-label" for="Other">Other</label>
+            </div>
+        </div>
+        </div><br/>
+
         <div class = "row">
         <div class = "col">
             <button type="submit" class="btn btn-primary" aria-label="Submit">Submit</button>
