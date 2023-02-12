@@ -1,16 +1,17 @@
 <?php
-   $h = 5;
+   $rows = 15;
+   $cells = 5;
    $i = 0;
    $j = 0;
-   $k = 3;
+   
 
    $table = "<table border = '1'>";
 
-   while($i < $h){
+   while($i < $rows){
       $table .= "<tr>";
       $j = 0;
       
-      while($j < $k){
+      while($j < $cells){
          $j++;
          $i++;
          $table .= "<td>row $i cell $j</td>";
