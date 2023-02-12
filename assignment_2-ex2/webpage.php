@@ -1,8 +1,9 @@
+<?php
 $title = "here's your damn php title";
 $header = "My Goddamn Web Page";
 $name = "Hope Heck";
 $footer = "and here's your damn php footer";
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
