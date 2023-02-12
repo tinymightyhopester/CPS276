@@ -19,7 +19,7 @@
 <body>
 	<div id="wrapper">
 		<header>
-			<h1>&lt;My Web Page&gt;</h1>
+			<h1>&lt;echo"My Web Page"&gt;</h1>
 		</header>
 		<main>
 			<h2>My name is &lt;Hope Heck&gt;</h2>
