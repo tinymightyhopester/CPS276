@@ -9,7 +9,7 @@
       $j = 0;
       
       while($j < 3){
-         $table .= "<td>cell</td>";
+         $table .= "<td>cell $i </td>";
          $j++;
       }
       $i++;
