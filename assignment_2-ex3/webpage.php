@@ -9,8 +9,11 @@
       $j = 0;
       
       while($j < 3){
-         $table .= "<td>row $i cell $j</td>";
          $j++;
+         $i++;
+         $table .= "<td>row $i cell $j</td>";
+         $i--;
+         
       }
       $i++;
       $table .= "</tr>";
