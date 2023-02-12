@@ -7,7 +7,7 @@ $string = "";
 $footer = "and here's your damn php footer";
 
 for ($i=1; $i<=3; $i++){
-	$string.$paragraph;
+	$string = $string.$paragraph;
    }
 ?>
 <!DOCTYPE html>
