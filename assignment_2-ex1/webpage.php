@@ -5,7 +5,7 @@ $string = "<ul>";
 for ($i = 1; $i < 5; $i++){
 	$string .= "<li>".$i."</li>";
 	$string .= "<ul>";
-	for ($j = 1; $j < 4; $j++){
+	for ($j = 1; $j < 6; $j++){
 		$string .= "&nbsp;&nbsp;&nbsp;&nbsp; <li>".$j."</li>";
 	}
 	$string .= "</ul>";
