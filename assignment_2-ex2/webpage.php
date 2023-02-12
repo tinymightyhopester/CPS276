@@ -8,7 +8,7 @@ $footer = "and here's your damn php footer";
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>&lt;<?php echo $title; ?>&gt;</title>
+	<title><?php echo $title; ?></title>
 	<style>
 		* {margin: 0; padding: 0;}
 		body {font: 120%/1.5 sans-serif;}
