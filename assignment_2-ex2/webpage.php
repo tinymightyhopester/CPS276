@@ -2,8 +2,13 @@
 $title = "here's your damn php title";
 $header = "My Goddamn Web Page";
 $name = "Hope Heck";
-$paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat mollis dolor at bibendum. In congue maximus ligula, ut faucibus mi accumsan at. Vestibulum sagittis tortor eget dui ultricies, a vulputate lacus faucibus. Fusce aliquet bibendum erat, sed bibendum eros cursus eu. Nulla at neque rhoncus, ultricies odio at, accumsan elit. Proin in turpis eu leo dapibus pulvinar. Vivamus viverra massa ut enim fringilla ultricies. Donec in enim blandit, iaculis nulla quis, egestas elit. Nullam ut enim id erat bibendum finibus nec ac eros. Nulla malesuada ex facilisis ultrices rhoncus. Nullam in euismod nisl. Donec pulvinar ex sit amet aliquet egestas. //n e";
+$paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat mollis dolor at bibendum. In congue maximus ligula, ut faucibus mi accumsan at. Vestibulum sagittis tortor eget dui ultricies, a vulputate lacus faucibus. Fusce aliquet bibendum erat, sed bibendum eros cursus eu. Nulla at neque rhoncus, ultricies odio at, accumsan elit. Proin in turpis eu leo dapibus pulvinar. Vivamus viverra massa ut enim fringilla ultricies. Donec in enim blandit, iaculis nulla quis, egestas elit. Nullam ut enim id erat bibendum finibus nec ac eros. Nulla malesuada ex facilisis ultrices rhoncus. Nullam in euismod nisl. Donec pulvinar ex sit amet aliquet egestas.\n";
+$string = "";
 $footer = "and here's your damn php footer";
+
+for ($i=1; $i<=3; $i++){
+	$string.$paragraph;
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +35,7 @@ $footer = "and here's your damn php footer";
 		</header>
 		<main>
 			<h2>My name is <?php echo $name; ?></h2>
-			<p><?php echo $paragraph; ?></p>
+			<p><?php echo $string; ?></p>
 			
 		</main>
 		<footer>
