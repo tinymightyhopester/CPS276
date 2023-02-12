@@ -7,14 +7,21 @@
    while($i < 5){
       $table .= "<tr>";
       $j = 0;
+      
       while($j < 3){
          $table .= "<td>cell</td>";
+         $j++;
       }
+      $i++;
+      $table .= "</tr>";
+
    }
+
+   $table .= "</table>"
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <body>
-	
+	<p><?php echo $table; ?></p>
 </body>
 </html>
