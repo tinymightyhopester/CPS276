@@ -25,7 +25,7 @@ $footer = "and here's your damn php footer";
 <body>
 	<div id="wrapper">
 		<header>
-			<h1>&lt;<?php echo $header; ?>&gt;</h1>
+			<h1>&lt;?php echo $header; ?&gt;</h1>
 		</header>
 		<main>
 			<h2>My name is &lt;<?php echo $name; ?>&gt;</h2>
