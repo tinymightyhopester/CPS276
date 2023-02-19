@@ -15,7 +15,7 @@
 		echo $Calculator->calc("*", 10); //will output You must enter a string and two numbers
 		echo $Calculator->calc(10); //will output You must enter a string and two numbers
 	}
-	catch{
+	catch(Exception $e){
 		echo "You must enter a string and two numbers";
 	}
 ?></p>
