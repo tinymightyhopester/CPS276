@@ -15,7 +15,7 @@ class Calculator{
                 if($operator == "/"){
 
                     $x = $num1/$num2;
-                    return "The division of the numbers is ".$x;
+                    return "The division of the numbers is ".$x."/n";
 
                 }else if($operator == "*"){
 
