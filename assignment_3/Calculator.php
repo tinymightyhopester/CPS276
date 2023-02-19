@@ -3,7 +3,8 @@ class Calculator{
     
     public function calc($operator=null, $num1=null, $num2=null){
         
-        if (is_null($operator) or is_null($num1) or is_null($num2)){
+        if (is_null($operator) or is_null($num1) or is_null($num2))
+        {
             return "Must enter a string and two numbers";
         }
         else if (is_string($operator) && is_int($num1) && is_int($num2))
@@ -36,6 +37,10 @@ class Calculator{
                     return "invalid operator";
                 }
             }
+        }
+        else
+        {
+            return "Cannot divide by zero".". \n";
         }
     }
 
