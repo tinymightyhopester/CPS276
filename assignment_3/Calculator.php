@@ -20,17 +20,17 @@ class Calculator{
                 }else if($operator == "*"){
 
                     $x = $num1*$num2;
-                    return "The product of the numbers is ".$x;
+                    return "The product of the numbers is ".$x."\n";
 
                 }else if($operator == "-"){
 
                     $x = $num1-$num2;
-                    return "The difference of the numbers is ".$x;
+                    return "The difference of the numbers is ".$x."\n";
 
                 }else if($operator == "+"){
 
                     $x = $num1+$num2;
-                    return "The sum of the numbers is ".$x;
+                    return "The sum of the numbers is ".$x."\n";
 
                 }else{
                     return "invalid operator";
