@@ -3,6 +3,10 @@ class Names{
 
     $names;
 
+    public function addNameList(){
+        return $names;
+    }
+
     public function addName($name){
         $delim = ' ';
         $namebreak = explode($delim, $name);
