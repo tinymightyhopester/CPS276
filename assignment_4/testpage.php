@@ -3,6 +3,7 @@ require_once 'Names.php';
 $addNames = new Names();
 $output = $addNames->addNameList();
 if(isset($_POST["addBtn"])&& !empty($_POST['inputName'])) {$output->addName($_POST['inputName'])}
+if(isset($_POST["clearBtn"])) {$output->clearNames($output)}
 ?>
 <!DOCTYPE html>
 <html lang="en">

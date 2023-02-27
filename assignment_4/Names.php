@@ -14,8 +14,8 @@ class Names{
         $names.=$newname;
     }
 
-    public function clearNames{
-        $names = "";
+    public function clearNames($nameList){
+        $nameList = "";
     }
 }
 ?>
