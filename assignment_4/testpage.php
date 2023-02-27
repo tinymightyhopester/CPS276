@@ -1,7 +1,7 @@
 <?php
 require_once 'Names.php';
-$addNames = new Names();
-$output = $addNames->addNameList();
+//$addNames = new Names();
+//$output = $addNames->addNameList();
 ?>
 <!DOCTYPE html>
 <html lang="en">
