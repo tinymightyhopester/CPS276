@@ -1,7 +1,7 @@
 <?php
 require_once 'Names.php';
-$addName = new addNameList();
-
+$addName = new Names();
+$output = $addName->addNameList();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +15,6 @@ $addName = new addNameList();
     <div><input type="Name" class="form-control" id="inputName" aria-describedby="input name"></div>
   </div>
   <div>
-  <textarea style="height: 500px;" class="form-control" id="namelist" name="namelist"><?php echo $output ?></textarea>
+  <textarea style="height: 500px;" class="form-control" id="namelist" name="namelist"><?php  ?></textarea>
   </div>
 </form>
