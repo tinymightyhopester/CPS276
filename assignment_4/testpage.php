@@ -2,7 +2,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<form action="~hheck/CPS276/assignment_4/testpage.php" method="post">
+<form action="testpage.php" method="post">
   <h1>Add Names</h1>
   
   <button type="submit" class="btn btn-primary" >Add Name</button>
