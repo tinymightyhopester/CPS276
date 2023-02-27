@@ -1,7 +1,7 @@
 <?php
 class Names{
 
-    $names;
+    var $names = "";
 
     public function addNameList(){
         return $names;
