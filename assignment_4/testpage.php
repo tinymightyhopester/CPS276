@@ -2,6 +2,7 @@
 require_once 'Names.php';
 $addNames = new Names();
 $output = $addNames->addNameList();
+if(isset($_POST["addBtn"])) {$output->addName(inputName.text)}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +17,6 @@ $output = $addNames->addNameList();
   </div>
   <div>
   <textarea style="height: 500px;" class="form-control" id="namelist" name="namelist">
-  <?php if(isset($_POST["addBtn"])) {$output->addName(inputName.text)} ?></textarea>
+  <?php  echo $output ?></textarea>
   </div>
 </form>
