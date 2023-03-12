@@ -6,7 +6,7 @@ $msg = "";
 if(isset($_POST['create'])){
   
    
-  $success = mkdir('directories/mydirectory');
+  $success = mkdir(directories/'mydirectory');
   
 /* I NEED TO USE THE CHMOD HERE TO SET THE PROPER PERMISSIONS.*/
   chmod('mydirectory', 0777);
