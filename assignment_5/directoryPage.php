@@ -42,7 +42,7 @@ if(isset($_POST['create'])){
     </form>
         <div>
             <textarea style="height: 500px;" class="form-control" id="text" name="text">
-            <?php  echo  ?></textarea>
+            <?php  ?></textarea>
         </div>
     </div>
   </body>
