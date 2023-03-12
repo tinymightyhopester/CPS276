@@ -6,7 +6,7 @@ $msg = "";
 if(isset($_POST['create'])){
   
    
-  $success = mkdir('mydirectory');
+  $success = mkdir('directories/mydirectory');
   
 /* I NEED TO USE THE CHMOD HERE TO SET THE PROPER PERMISSIONS.*/
   chmod('mydirectory', 0777);
@@ -33,7 +33,7 @@ if(isset($_POST['create'])){
   </head>
   <body>
     <div id="wrapper" class="container">
-      <h1>Single Directory</h1>
+      <h1>Make A Directory</h1>
       <p><?php echo $msg; ?></p>
       <p>This example demonstrates how to create and remove a single "empty" directory.</p>
       <p>NOTE: In order for this to work the folder this file is in <code>php-directories</code> had to have permissions of 0777.</p>
