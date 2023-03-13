@@ -35,15 +35,16 @@ if(isset($_POST['create'])){
     <div id="wrapper" class="container">
       <h1>Make A Directory</h1>
       <p><?php echo $msg; ?></p>
-      <p>This example demonstrates how to create and remove a single "empty" directory.</p>
-      <p>NOTE: In order for this to work the folder this file is in <code>php-directories</code> had to have permissions of 0777.</p>
       <form action="directoryPage.php" method="POST">
+        <label for="inputName" class="form-label">Enter Name</label>
+        <div><input type="Name" class="form-control" id="inputName" aria-describedby="input name"></div>
         <input type="submit" class="btn btn-primary" name="create" value="Create Directory">
-    </form>
+    
         <div>
             <textarea style="height: 500px;" class="form-control" id="text" name="text">
             <?php  ?></textarea>
         </div>
+        </form>
     </div>
   </body>
 </html>
