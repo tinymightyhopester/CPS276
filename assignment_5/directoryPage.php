@@ -1,25 +1,23 @@
 <?php
-
+require_once 'Directories.php';
+$dct = new Directories();
 $msg = "";
 
-//ISSET CHECKS TO SEE IF A VARIBLE EXISTS. RETURNS TRUE IF IT DOES AND FALSE IF IT DOES NOT. 
 if(isset($_POST['create'])){
-  
-   
-  $success = mkdir('directories/mydirectory');
-  
-/* I NEED TO USE THE CHMOD HERE TO SET THE PROPER PERMISSIONS.*/
-  chmod('mydirectory', 0777);
- 
-  if($success){
-    $msg = "Directory Created";
+
+  if(is_dir($_POST['inputName'])){
+    $msg = "Directory already exists";
   }
   else{
-    $msg = "There was a problem";
+    $success = $dct->newDirectory($_POST['inputName'],$_POST['text']);
+    if($success){
+      $msg = "Directory created"
+    }else{
+      $msg = "There was an error"
+    }
   }
   
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -36,14 +34,14 @@ if(isset($_POST['create'])){
       <h1>Make A Directory</h1>
       <p><?php echo $msg; ?></p>
       <form action="directoryPage.php" method="POST">
-        <label for="inputName" class="form-label">Enter Name</label>
+        <label for="inputName" class="form-label">Enter Directory Name:</label>
         <div><input type="Name" class="form-control" id="inputName" aria-describedby="input name"></div>
-        <input type="submit" class="btn btn-primary" name="create" value="Create Directory">
-    
-        <div>
+            <div>
+            <label for="text" class="form-label">Enter Text:</label>
             <textarea style="height: 500px;" class="form-control" id="text" name="text">
             <?php  ?></textarea>
         </div>
+        <input type="submit" class="btn btn-primary" name="create" value="Create Directory">
         </form>
     </div>
   </body>
