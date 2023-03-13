@@ -11,9 +11,10 @@ if(isset($_POST['create'])){
   else{
     $success = $dct->newDirectory($_POST['inputName'],$_POST['text']);
     if($success){
-      $msg = "Directory created"
-    }else{
-      $msg = "There was an error"
+      $msg = "Directory created";
+    }
+    else{
+      $msg = "There was an error";
     }
   }
   
