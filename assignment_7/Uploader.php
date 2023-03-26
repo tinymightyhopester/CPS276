@@ -1,6 +1,6 @@
 
 <?php
-$target_dir = "assignment_7/uploads/";
+$target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $finfo = finfo_open(FILEINFO_MIME_TYPE);
@@ -8,8 +8,8 @@ $mime = finfo_file($finfo, $_FILES["fileToUpload"]["tmp_name"]);
 
 if(isset($_POST["submit"])) {
 
-    if(!is_dir("assignment_7/uploads/")){
-        mkdir("assignment_7/uploads/");
+    if(!is_dir("uploads/")){
+        mkdir("uploads/");
     }
 
     if ($_FILES["fileToUpload"]["size"] > 100000) {
