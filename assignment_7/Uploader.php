@@ -8,6 +8,10 @@ $mime = finfo_file($finfo, $_FILES["fileToUpload"]["tmp_name"]);
 
 if(isset($_POST["submit"])) {
 
+    if(!is_dir("assignment_7/uploads/")){
+        mkdir("assignment_7/uploads/");
+    }
+
     if ($_FILES["fileToUpload"]["size"] > 100000) {
         echo "Sorry, your file is too large.";
         $uploadOk = 0;
