@@ -24,7 +24,8 @@ if(isset($_POST["submit"])) {
         echo "Sorry, your file was not uploaded.";
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+            echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+            //INSERT INTO file_locations(file_name,file_path) VALUES ();
         } else {
         echo "Sorry, there was an error uploading your file.";
         }
