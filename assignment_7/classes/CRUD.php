@@ -15,7 +15,7 @@ class CRUD{
         }
         else {
             if(count($records) != 0){
-                return $this->makeArray($records);	
+                return $this->makeList($records);	
             }
             else {
                 return 'no records found';
@@ -42,12 +42,13 @@ class CRUD{
         }
     }
 
-    private function makeArray($records){
-
-        //foreach ($records){}
-
-        
-
+    private function makeList($records){
+        $list = '<ol>';
+        foreach ($records as $row){
+            $list .= "<li><p><a href={$row['file_path']}>{$row['file_name']}</a></p></li>";
+        }
+        $list .= '</ol>';
+		return $list;
     }
 
 }
