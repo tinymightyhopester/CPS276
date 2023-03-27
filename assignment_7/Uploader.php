@@ -24,7 +24,7 @@ if(isset($_POST["submit"])) {
     if ($uploadOk == 0) {
         echo "Sorry, your file was not uploaded.";
     } else {
-        if (move_uploaded_file($_POST["fileName"], $target_file)) {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             $crud = new CRUD();
             $crud->insertRecord($_POST["fileName"],$target_file);
             echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
