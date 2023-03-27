@@ -1,5 +1,6 @@
 
 <?php
+require_once "classes/CRUD.php";
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
@@ -24,6 +25,8 @@ if(isset($_POST["submit"])) {
         echo "Sorry, your file was not uploaded.";
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            $crud = new CRUD();
+            $crud->insertRecord($_FILES["fileToUpload"]["name"],$target_file);
             echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
             //INSERT INTO file_locations(file_name,file_path) VALUES ();
         } else {
