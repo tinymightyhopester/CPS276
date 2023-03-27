@@ -36,9 +36,9 @@ class CRUD{
 
     private function makeArray($records){
 
-        foreach ($records){
+        //foreach ($records){}
 
-        }
+        
 
     }
 
