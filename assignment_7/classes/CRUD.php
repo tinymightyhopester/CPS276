@@ -26,11 +26,19 @@ class CRUD{
     public function insertRecord($fileName, $fileLocation){
         $pdo = new Pdo_methods();
         
-        $sql = "INSERT INTO file_locations(`file_name`,`file_path`)VALUES($fileName,$fileLocation)";
+        $sql = "INSERT INTO file_locations(file_name,file_path)VALUES(:fileName,:fileLocation)";
 
-        $records = $pdo->otherNotBinded($sql);
+        $bindings = [
+			[':fileName',$fileName,'str'],
+			[':fileLocation',$fileLocation,'str'],
+		];
+
+        $records = $pdo->otherBinded($sql,$bindings);
+
         if($records == 'error'){
-            return 'There has been and error processing your request';
+            return 'There has been an error processing your request';
+        }else{
+            return "record added";
         }
     }
 
