@@ -1,6 +1,6 @@
 <?php
 
-class DatabaseConn {	
+class Db_conn {	
 
   private $conn;
   /* THIS CLASS CONNECTS TO THE DATABASE ONLY AND SETS UP THE ATTRIBUTE PARAMETERS */
