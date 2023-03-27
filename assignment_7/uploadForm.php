@@ -4,9 +4,9 @@
 <body>
 
 <form action="Uploader.php" method="post" enctype="multipart/form-data">
-  Select image to upload:
-  <input type="text" name="fileName" id="fileName">
-  <input type="file" name="fileToUpload" id="fileToUpload">
+  File name:
+  <input type="text" name="fileName" id="fileName"><br>
+  <input type="file" name="fileToUpload" id="fileToUpload"><br>
   <input type="submit" value="Upload File" name="submit">
 </form>
 
