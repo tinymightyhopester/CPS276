@@ -12,7 +12,7 @@ $crud = new CRUD();
   Files:<br></br>
   <div id="fileList"><?php echo $crud->getLocations('list'); ?></div>
 
-  <a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_7/uploadForm.php'>Back to upload page</a><br></br>
+  <a target='_blank' href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_7/uploadForm.php'>Back to upload page</a><br></br>
 
 </form>
 
