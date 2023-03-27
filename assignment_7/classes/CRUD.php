@@ -26,7 +26,7 @@ class CRUD{
     public function insertRecord($fileName, $fileLocation){
         $pdo = new Pdo_methods();
         
-        $sql = "INSERT INTO 'file_locations'('file_name','file_path') VALUES ($fileName,$fileLocation)";
+        $sql = "INSERT INTO file_locations('file_name','file_path') VALUES ($fileName,$fileLocation)";
 
         $records = $pdo->otherNotBinded($sql);
         if($records == 'error'){
