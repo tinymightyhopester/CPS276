@@ -45,7 +45,7 @@ class CRUD{
     private function makeList($records){
         $list = '<ol>';
         foreach ($records as $row){
-            $list .= "<li><p><a href={$row['file_path']}>{$row['file_name']}</a></p></li>";
+            $list .= "<li><p><a target='_blank' href={$row['file_path']}>{$row['file_name']}</a></p></li>";
         }
         $list .= '</ol>';
 		return $list;
