@@ -23,7 +23,7 @@ class CRUD{
         }
     }
 
-    private function insertRecord($fileName, $fileLocation){
+    public function insertRecord($fileName, $fileLocation){
         $pdo = new Pdo_methods();
         
         $sql = "INSERT INTO file_locations(file_name,file_path) VALUES ($fileName,$fileLocation)";
