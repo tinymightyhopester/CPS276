@@ -26,7 +26,7 @@ if(isset($_POST["submit"])) {
     } else {
         if (move_uploaded_file($_POST["fileName"], $target_file)) {
             $crud = new CRUD();
-            $crud->insertRecord($_FILES["fileToUpload"]["name"],$target_file);
+            $crud->insertRecord($_POST["fileName"],$target_file);
             echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
             //INSERT INTO file_locations(file_name,file_path) VALUES ();
         } else {
