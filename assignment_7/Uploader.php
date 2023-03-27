@@ -28,7 +28,7 @@ if(isset($_POST["submit"])) {
             $crud = new CRUD();
             $crud->insertRecord($_POST["fileName"],$target_file);
             echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-            echo "<p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_7'>Back to main</a></p>";
+            echo "<p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_7/uploadForm.php'>Back to upload page</a></p>";
         } else {
         echo "Sorry, there was an error uploading your file.";
         }
