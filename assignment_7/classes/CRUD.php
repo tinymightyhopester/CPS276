@@ -1,5 +1,5 @@
 <?php
-require_once 'Pdo_methods.php';
+require_once 'classes/Pdo_methods.php';
 class CRUD{
 
     public function getLocations(){
