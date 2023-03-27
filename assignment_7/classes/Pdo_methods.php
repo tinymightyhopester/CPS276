@@ -119,7 +119,7 @@ class Pdo_methods extends Db_conn {
 
 	/* CREATES A CONNECTION TO THE DATABASE */
 	private function db_connection(){
-		$this->db = new DatabaseConn();
+		$this->db = new Db_conn();
 		$this->conn = $this->db->dbOpen();
 	}
 
