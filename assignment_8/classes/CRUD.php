@@ -1,6 +1,6 @@
 <?php
 
-require_once 'classes/Pdo_methods.php';
+require_once "/home/h/h/hheck/public_html/CPS276/classes/Pdo_methods.php";
 
 class CRUD{
 
