@@ -1,6 +1,6 @@
 <?php
 
-require_once 'assignment_8/classes/CRUD.php';
+require_once 'C:/Users/creat/CPS276/assignment_8/classes/CRUD.php';
 $crud = new CRUD();
 
     $data = json_decode($_POST['data']);

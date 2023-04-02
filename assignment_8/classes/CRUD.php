@@ -1,5 +1,5 @@
 <?php
-
+class CRUD{
 require_once 'classes/Pdo_methods.php';
 
     public function insertRecord($addName){
@@ -14,5 +14,6 @@ require_once 'classes/Pdo_methods.php';
         $records = $pdo->otherBinded($sql,$bindings);
 
     }
+}
 
 ?>
