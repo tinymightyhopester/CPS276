@@ -1,8 +1,9 @@
 <?php
 
+
 $response = (object)[
     'masterstatus'=>'success',
-    'msg'=>"button test"
+    'msg'=>"Name added"
 ];
 
 ?>

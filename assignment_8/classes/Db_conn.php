@@ -9,9 +9,9 @@ class Db_conn {
     try {
 
       $dbHost = 'localhost';
-      $dbName = 'names';
-      $dbUsr = 'root';
-      $dbPass = 'password';
+      $dbName = 'hheck';
+      $dbUsr = 'hheck';
+      $dbPass = 'GQvxeWkBWSJG';
       
       $this->conn = new PDO('mysql:host=' . $dbHost . ';dbname=' . $dbName, $dbUsr, $dbPass);
       
