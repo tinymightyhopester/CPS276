@@ -5,4 +5,9 @@ $crud = new CRUD();
 
 $records = $crud->clearNames;
 
+$response = (object)[
+    'masterstatus'=>'success',
+    "msg"=>"All names deleted"
+];
+
 ?>
