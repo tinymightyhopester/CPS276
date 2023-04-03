@@ -8,18 +8,8 @@ $crud = new CRUD();
     $name = explode(" ", $data->name);
     $fname = $name[0];
     $lname = $name[1];
-    $addName = "$lname, $fname\n";
+    $addName = "$lname, $fname";
 
     $records = $crud->insertRecord($addName);
-
-    if($records == 'error'){
-        $response = (object)[
-            'msg'=>"Name not added"
-        ];
-    }else{
-        $response = (object)[
-            'msg'=>"Name added"
-        ];
-    }
-
+    echo $records;
 ?>

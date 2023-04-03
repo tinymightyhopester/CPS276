@@ -4,6 +4,26 @@ require_once "/home/h/h/hheck/public_html/CPS276/assignment_8/classes/Pdo_method
 
 class CRUD{
 
+    public function getNames(){
+
+        $pdo = new Pdo_methods();
+        
+        $sql = "SELECT * FROM names";
+
+        $records = $pdo->selectNotBinded($sql);
+
+        if($records == 'error'){
+            return 'There has been an error processing your request';
+        }
+        else {
+            if(count($records) != 0){
+                return $this->makeList($records);	
+            }
+            else {
+                return 'no records found';
+            }
+        }
+    }
 
     public function insertRecord($name){
         $pdo = new Pdo_methods();
@@ -19,6 +39,16 @@ class CRUD{
         return $records;
 
     }
+
+    private function makeList($records){
+        $list = '<ol>';
+        foreach ($records as $row){
+            $list .= "<li><p>{$row['name']}</a></p></li>";
+        }
+        $list .= '</ol>';
+		return $list;
+    }
+
 }
 
 ?>
