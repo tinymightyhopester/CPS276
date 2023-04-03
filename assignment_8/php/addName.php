@@ -10,13 +10,12 @@ $crud = new CRUD();
     $lname = $name[1];
     $addName = "$lname, $fname\n";
 
-    $crud->insertRecord($addName);
+    $records = $crud->insertRecord($addName);
 
-    $response = (object)[
-        'masterstatus'=>'success',
+    if($records == 'error'){
+        'msg'=>'There has been an error processing your request';
+    }else{
         'msg'=>"Name added"
-    ];
-    
-    echo json_encode($response);
+    }
 
 ?>
