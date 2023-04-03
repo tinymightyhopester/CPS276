@@ -14,7 +14,7 @@ $crud = new CRUD();
 
     if($records == 'error'){
         $response = (object)[
-            'msg'=>"Name added"
+            'msg'=>"Name not added"
         ];
     }else{
         $response = (object)[

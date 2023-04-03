@@ -5,16 +5,18 @@ require_once "/home/h/h/hheck/public_html/CPS276/assignment_8/classes/Pdo_method
 class CRUD{
 
 
-    public function insertRecord($addName){
+    public function insertRecord($name){
         $pdo = new Pdo_methods();
         
-        $sql = "INSERT INTO names(name)VALUES(:addName)";
+        $sql = "INSERT INTO names(name)VALUES(:name)";
 
         $bindings = [
-            [':name',$addName,'str']
+            [':name',$name,'str']
         ];
 
         $records = $pdo->otherBinded($sql,$bindings);
+
+        return $records;
 
     }
 }
