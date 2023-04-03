@@ -4,7 +4,7 @@
     $crud = new CRUD();
 
     $list = $crud->getNames();
-    $list = json_encode($list);
+    
     $response = (object)[
         'masterstatus'=>'success',
         "names"=>json_decode($list)

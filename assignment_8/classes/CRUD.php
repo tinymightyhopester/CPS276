@@ -25,6 +25,16 @@ class CRUD{
         }
     }
 
+    public function clearNames(){
+
+        $pdo = new Pdo_methods();
+        
+        $sql = "DELETE from names";
+
+        $records = $pdo->otherNotBinded($sql);
+
+    }
+
     public function insertRecord($name){
         $pdo = new Pdo_methods();
         
@@ -45,7 +55,7 @@ class CRUD{
         foreach ($records as $row){
             $list .= "{$row['name']}<br>";
         }
-		return $list;
+		return json_encode($list);
     }
 
 }
