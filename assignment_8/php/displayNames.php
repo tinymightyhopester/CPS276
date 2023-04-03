@@ -7,10 +7,10 @@
     
     $response = (object)[
         'masterstatus'=>'success',
-        "names"=>json_decode($list)
+        "names"=>$list
     ];
+ 
+    echo json_encode($response);
 
-    
-    echo $list;
     //return $list;
 ?>
