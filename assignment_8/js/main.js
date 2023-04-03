@@ -19,7 +19,7 @@ name.clearNames = function(){
 		let json;
 
 		console.log(res.responseText);
-		//json = JSON.parse(res.responseText);
+		json = JSON.parse(res.responseText);
 
 
 		if(json.masterstatus == 'error'){
@@ -51,7 +51,7 @@ name.addName = function(){
 		let json;
 
 		console.log(res.responseText);
-		//json = JSON.parse(res.responseText);
+		json = JSON.parse(res.responseText);
 
 
 		if(json.masterstatus == 'error'){

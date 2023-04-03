@@ -11,5 +11,11 @@ $crud = new CRUD();
     $addName = "$lname, $fname";
 
     $records = $crud->insertRecord($addName);
+
+    $response = (object)[
+        'masterstatus'=>'success',
+        "msg"=>"Name Added"
+    ];
+
     echo $records;
 ?>
