@@ -10,6 +10,7 @@
         "names"=>json_decode($list)
     ];
 
+    
     echo $list;
     //return $list;
 ?>
