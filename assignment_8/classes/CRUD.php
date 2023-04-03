@@ -41,11 +41,10 @@ class CRUD{
     }
 
     private function makeList($records){
-        $list = '<ol>';
+        $list = "";
         foreach ($records as $row){
-            $list .= "<li><p>{$row['name']}</a></p></li>";
+            $list .= "{$row['name']}<br>";
         }
-        $list .= '</ol>';
 		return $list;
     }
 
