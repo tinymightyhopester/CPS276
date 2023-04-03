@@ -13,9 +13,13 @@ $crud = new CRUD();
     $records = $crud->insertRecord($addName);
 
     if($records == 'error'){
-        'msg'=>'There has been an error processing your request';
+        $response = (object)[
+            'msg'=>"Name added"
+        ];
     }else{
-        'msg'=>"Name added"
+        $response = (object)[
+            'msg'=>"Name added"
+        ];
     }
 
 ?>
