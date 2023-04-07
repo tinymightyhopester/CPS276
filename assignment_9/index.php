@@ -16,8 +16,7 @@
       <h1>Homepage</h1>
 
       <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9/display.php'>Display Notes</a></p>
-    </div>
-    <div>
+    
       <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9/add.php'>Add Note</a></p>
     </div>
 
