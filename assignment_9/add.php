@@ -15,7 +15,7 @@
     <div class="container">
       <h1>Add Note</h1>
 
-      <p>Display notes href</p>
+      <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9/display.php'>Display Notes</a></p>
 
       <form method="post" action="">
         <div class="form-group">
