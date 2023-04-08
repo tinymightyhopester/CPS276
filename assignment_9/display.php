@@ -20,11 +20,11 @@
       <form method="post" action="">
         <div class="form-group">
             <label for="beginningDate">Beginning Date</label>
-            <input type="text" class="form-control" id="beginningDate" name="beginningDate">
+            <input type="date" class="form-control" id="beginningDate" name="beginningDate">
         </div>
         <div class="form-group">
             <label for="endDate">End Date</label>
-            <input type="text" class="form-control" id="endDate" name="endDate">
+            <input type="date" class="form-control" id="endDate" name="endDate">
         </div>
         <button type="submit" class="btn btn-primary" name="submit">Submit</button>
       </form>

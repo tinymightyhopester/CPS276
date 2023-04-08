@@ -13,11 +13,12 @@
   </head>
   <body>
     <div class="container">
-      <h1>Homepage</h1>
-
-      <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9/display.php'>Display Notes</a></p>
+        </br>
+        <h1>Homepage</h1>
+        </br>
+        <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9/display.php'>Display Notes</a></p>
     
-      <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9/add.php'>Add Note</a></p>
+        <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9/add.php'>Add Note</a></p>
     </div>
 
   </body>

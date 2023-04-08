@@ -20,7 +20,7 @@
       <form method="post" action="">
         <div class="form-group">
             <label for="dateTime">Date and Time</label>
-            <input type="text" class="form-control" id="dateTime" name="dateTime">
+            <input type="datetime-local" class="form-control" id="dataTime" name="dateTime">
         </div>
         <div class="form-group">
             <label for="note">File Content</label>
