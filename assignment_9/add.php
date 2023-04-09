@@ -1,12 +1,7 @@
 <?php
+require_once '/home/h/h/hheck/public_html/CPS276/assignment_9/classes/date_note.php';
+$dateNote = new date_note();
 
-if(count($_POST)){
-  require_once 'classes/date_note.php';
-  $dateNote = new date_note();
-  $msg = newDateNote();
-}else{
-  $msg = "";
-}
 ?>
 <!doctype html>
 
@@ -26,7 +21,7 @@ if(count($_POST)){
     <div class="container">
       <h1>Add Note</h1>
 
-      <?php echo $msg ?>
+      <?php echo $dateNote->newDateNote(); ?>
 
       <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9/display.php'>Display Notes</a></p>
 
