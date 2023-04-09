@@ -1,4 +1,8 @@
 <!doctype html>
+<?php
+require_once 'classes/date_note.php';
+$dateNote = new date_note();
+?>
 <html lang="en">
   <head>
     
