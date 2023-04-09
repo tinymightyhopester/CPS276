@@ -10,6 +10,6 @@ CREATE TABLE date_notes
 (
   id            int          NOT NULL AUTO_INCREMENT,
   file_date     timestamp    NULL ,
-  file_note     varchar(45)  NULL ,
+  file_note     varchar(120)  NULL ,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB;
