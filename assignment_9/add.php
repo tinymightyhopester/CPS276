@@ -1,8 +1,9 @@
-<!doctype html>
 <?php
 require_once 'classes/date_note.php';
 $dateNote = new date_note();
 ?>
+<!doctype html>
+
 <html lang="en">
   <head>
     
@@ -21,7 +22,7 @@ $dateNote = new date_note();
 
       <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9/display.php'>Display Notes</a></p>
 
-      <form method="post" action="">
+      <form method="post" action="date_note.php">
         <div class="form-group">
             <label for="dateTime">Date and Time</label>
             <input type="datetime-local" class="form-control" id="dataTime" name="dateTime">
@@ -30,7 +31,7 @@ $dateNote = new date_note();
             <label for="note">File Content</label>
             <textarea name="note" id="filecontent" name="note" class="form-control" cols="30" rows="20"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+        <button type="submit" class="btn btn-primary" name="addSubmit">Submit</button>
       </form>
     </div>
 

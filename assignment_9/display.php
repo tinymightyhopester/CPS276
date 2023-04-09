@@ -17,7 +17,7 @@
 
       <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9/add.php'>Add Note</a></p>
 
-      <form method="post" action="">
+      <form method="post" action="date_note.php">
         <div class="form-group">
             <label for="beginningDate">Beginning Date</label>
             <input type="date" class="form-control" id="beginningDate" name="beginningDate">
@@ -26,7 +26,7 @@
             <label for="endDate">End Date</label>
             <input type="date" class="form-control" id="endDate" name="endDate">
         </div>
-        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+        <button type="submit" class="btn btn-primary" name="displaySubmit">Submit</button>
       </form>
     </div>
 
