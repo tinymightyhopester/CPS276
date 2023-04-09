@@ -1,6 +1,6 @@
 <?php
-require_once '/home/h/h/hheck/public_html/CPS276/assignment_9_1/classes/date_note.php';
-$dateNote = new date_note();
+require_once '/home/h/h/hheck/public_html/CPS276/assignment_9_1/classes/dateNote.php';
+$dateNote = new dateNote();
 
 ?>
 <!doctype html>
@@ -23,12 +23,12 @@ $dateNote = new date_note();
 
       <?php echo $dateNote->newDateNote(); ?>
 
-      <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9/display.php'>Display Notes</a></p>
+      <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9_1/display.php'>Display Notes</a></p>
 
       <form method="post" action="add.php">
         <div class="form-group">
             <label for="dateTime">Date and Time</label>
-            <input type="datetime-local" class="form-control" id="dataTime" name="dateTime">
+            <input type="datetime-local" class="form-control" id="dateTime" name="dateTime">
         </div>
         <div class="form-group">
             <label for="note">File Content</label>

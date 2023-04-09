@@ -7,9 +7,28 @@ class dateNote {
 
         if(isset($_POST["addSubmit"])) {
             if ($_POST["dateTime"] !== "" && $_POST["note"] !== ""){
-                $timestamp = strtotime($_POST["dateTime"]);
-                insertRecord($timestamp,$_POST["note"]);
-                return "<p>sucessfully added note<p>";
+
+                $pdo = new Pdo_methods();
+                $file_date = strtotime($_POST["dateTime"]);
+                $file_note = $_POST["note"];
+                echo $file_date;
+                echo $file_note;
+                
+
+                $sql = "INSERT INTO date_notes(file_date,file_note)VALUES(:file_date,:file_note)";
+
+                $bindings = [
+                    [':file_date',$file_date,'timestamp'],
+                    [':file_note',$file_note,'str'],
+                ];
+
+                $records = $pdo->otherBinded($sql,$bindings);
+
+                if($records == 'error'){
+                    return 'There has been an error processing your request';
+                }else{
+                    return "record added";
+                }
             }else{
                 return "<p>must enter date, time, and note<p>";
             }
@@ -41,25 +60,6 @@ class dateNote {
             else {
                 return 'no records found';
             }
-        }
-    }
-
-    public function insertRecord($file_date, $file_note){
-        $pdo = new Pdo_methods();
-        
-        $sql = "INSERT INTO date_notes(file_date,file_note)VALUES(:file_date,:file_note)";
-
-        $bindings = [
-			[':file_date',$file_date,'timestamp'],
-			[':file_note',$file_note,'str'],
-		];
-
-        $records = $pdo->otherBinded($sql,$bindings);
-
-        if($records == 'error'){
-            return 'There has been an error processing your request';
-        }else{
-            return "record added";
         }
     }
 

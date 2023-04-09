@@ -15,9 +15,9 @@
     <div class="container">
       <h1>Display Notes</h1>
 
-      <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9/add.php'>Add Note</a></p>
+      <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9_1/add.php'>Add Note</a></p>
 
-      <form method="post" action="date_note.php">
+      <form method="post" action="display.php">
         <div class="form-group">
             <label for="beginningDate">Beginning Date</label>
             <input type="date" class="form-control" id="beginningDate" name="beginningDate">
