@@ -1,20 +1,21 @@
 <?php
-require_once 'classes/Pdo_methods.php';
+require_once '/home/h/h/hheck/public_html/CPS276/assignment_9/classes/Pdo_methods.php';
 
 class date_note {
 
-    if(isset($_POST["addSubmit"])) {
-        if ($_POST["dateTime"] !== "" && $_POST["note"] !== ""){
-            newDateNote($_POST["dateTime"],$_POST["note"]);
-            return "sucessfully added note";
-        }else{
-            return "must enter date, time, and note";
-        }
-    }
+    public function newDateNote(){
 
-    public function newDateNote($date,$note){
-        $timestamp = strtotime($date);
-        insertRecord($timestamp,$note);
+        if(isset($_POST["addSubmit"])) {
+            if ($_POST["dateTime"] !== "" && $_POST["note"] !== ""){
+                $timestamp = strtotime($_POST["dateTime"]);
+                insertRecord($timestamp,$_POST["note"]);
+                return "<p>sucessfully added note<p>";
+            }else{
+                return "<p>must enter date, time, and note<p>";
+            }
+        }
+        
+        
     }
 
     public function getDateNotes($beginningDate, $endDate){
