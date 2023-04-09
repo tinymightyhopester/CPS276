@@ -4,12 +4,17 @@ require_once 'classes/Pdo_methods.php';
 class date_note {
 
     if(isset($_POST["addSubmit"])) {
-
+        if ($_POST["dateTime"] !== "" && $_POST["note"] !== ""){
+            newDateNote($_POST["dateTime"],$_POST["note"]);
+            return "sucessfully added note";
+        }else{
+            return "must enter date, time, and note";
+        }
     }
 
     public function newDateNote($date,$note){
         $timestamp = strtotime($date);
-        $crud -> insertRecord($timestamp,$note);
+        insertRecord($timestamp,$note);
     }
 
     public function getDateNotes($beginningDate, $endDate){

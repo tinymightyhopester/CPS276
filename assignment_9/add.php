@@ -22,7 +22,7 @@ $dateNote = new date_note();
 
       <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9/display.php'>Display Notes</a></p>
 
-      <form method="post" action="date_note.php">
+      <form method="post" action="add.php">
         <div class="form-group">
             <label for="dateTime">Date and Time</label>
             <input type="datetime-local" class="form-control" id="dataTime" name="dateTime">
