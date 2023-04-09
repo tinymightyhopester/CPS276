@@ -2,13 +2,18 @@
 require_once 'classes/Pdo_methods.php';
 class CRUD{
 
-    public function getLocations(){
+    public function getDateNotes($beginningDate, $endDate){
 
         $pdo = new Pdo_methods();
         
-        $sql = "SELECT * FROM file_locations";
+        $sql = "SELECT file_date, file_note FROM date_notes WHERE file_date BETWEEN :beginningDate AND :endDate ORDER BY file_date DESC";
 
-        $records = $pdo->selectNotBinded($sql);
+        $bindings = [
+			[':beginningDate',$beginningDate,'timestamp'],
+			[':endDate',$endDate,'timestamp'],
+		];
+
+        $records = $pdo->selectBinded($sql, $bindings);
 
         if($records == 'error'){
             return 'There has been and error processing your request';
@@ -23,14 +28,14 @@ class CRUD{
         }
     }
 
-    public function insertRecord($fileName, $fileLocation){
+    public function insertRecord($file_date, $file_note){
         $pdo = new Pdo_methods();
         
-        $sql = "INSERT INTO file_locations(file_name,file_path)VALUES(:fileName,:fileLocation)";
+        $sql = "INSERT INTO date_notes(file_date,file_note)VALUES(:file_date,:file_note)";
 
         $bindings = [
-			[':fileName',$fileName,'str'],
-			[':fileLocation',$fileLocation,'str'],
+			[':file_date',$file_date,'timestamp'],
+			[':file_note',$file_note,'str'],
 		];
 
         $records = $pdo->otherBinded($sql,$bindings);
