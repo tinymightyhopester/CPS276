@@ -1,7 +1,7 @@
 <?php
-require_once '/home/h/h/hheck/public_html/CPS276/assignment_9/classes/date_note.php';
-$dateNote = new date_note();
-$msg = $dateNote->newDateNote();
+//require_once '/home/h/h/hheck/public_html/CPS276/assignment_9/classes/date_note.php';
+//$dateNote = new date_note();
+
 ?>
 <!doctype html>
 
@@ -21,7 +21,7 @@ $msg = $dateNote->newDateNote();
     <div class="container">
       <h1>Add Note</h1>
 
-      <?php echo $msg; ?>
+      <?php //echo $dateNote->newDateNote(); ?>
 
       <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9/display.php'>Display Notes</a></p>
 
