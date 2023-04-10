@@ -69,12 +69,13 @@ class dateNote {
     }
 
     private function makeList($records){
-        $table = "<table border = '1'><tr>";
+        $table = "<table border = '1'><tr><td>Date and time:</td><td>Note:</td></tr>";
+        
         foreach ($records as $row){
             $dt = date('m/d/Y H:i:s',$row['file_date']);
-            $table .= "<td><p>Date and time: {$dt}</td><td>Note: {$row['file_note']}</p></td>";
+            $table .= "<tr><td><p>{$dt}</td><td>{$row['file_note']}</p></td></tr>";
         }
-        $table .= '</table></tr>';
+        $table .= '</tr></table>';
 		return $table;
     }
 
