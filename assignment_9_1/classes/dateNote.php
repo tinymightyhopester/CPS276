@@ -10,10 +10,7 @@ class dateNote {
 
                 $pdo = new Pdo_methods();
                 $file_date = strtotime($_POST["dateTime"]);
-                $file_note = $_POST["note"];
-                echo $file_date;
-                echo $file_note;
-                
+                $file_note = $_POST["note"];                
 
                 $sql = "INSERT INTO date_notes(file_date,file_note)VALUES(:file_date,:file_note)";
 
@@ -37,28 +34,36 @@ class dateNote {
         
     }
 
-    public function getDateNotes($beginningDate, $endDate){
+    public function getDateNotes(){
+        if(isset($_POST["displaySubmit"])) {
+            if ($_POST["beginningDate"] !== "" && $_POST["endDate"] !== ""){
 
-        $pdo = new Pdo_methods();
-        
-        $sql = "SELECT file_date, file_note FROM date_notes WHERE file_date BETWEEN :beginningDate AND :endDate ORDER BY file_date DESC";
+                $pdo = new Pdo_methods();
+                $beginningDate = strtotime($_POST["beginningDate"]);
+                $endDate = strtotime($_POST["endDate"]);
 
-        $bindings = [
-			[':beginningDate',$beginningDate,'timestamp'],
-			[':endDate',$endDate,'timestamp'],
-		];
+                $sql = "SELECT file_date, file_note FROM date_notes WHERE file_date BETWEEN :beginningDate AND :endDate ORDER BY file_date DESC";
 
-        $records = $pdo->selectBinded($sql, $bindings);
+                $bindings = [
+                    [':beginningDate',$beginningDate,'timestamp'],
+                    [':endDate',$endDate,'timestamp'],
+                ];
 
-        if($records == 'error'){
-            return 'There has been and error processing your request';
-        }
-        else {
-            if(count($records) != 0){
-                return $this->makeList($records);	
-            }
-            else {
-                return 'no records found';
+                $records = $pdo->selectBinded($sql, $bindings);
+
+                if($records == 'error'){
+                    return 'There has been and error processing your request';
+                }
+                else {
+                    if(count($records) != 0){
+                        return $this->makeList($records);	
+                    }
+                    else {
+                        return 'no records found';
+                    }
+                }
+            }else{
+                return "<p>must enter dates</p>";
             }
         }
     }
@@ -66,7 +71,7 @@ class dateNote {
     private function makeList($records){
         $list = '<ol>';
         foreach ($records as $row){
-            $list .= "<li><p><a target='_blank' href={$row['file_date']}>{$row['file_note']}</a></p></li>";
+            $list .= "<li><p>{$row['file_date']}{$row['file_note']}</a></p></li>";
         }
         $list .= '</ol>';
 		return $list;
