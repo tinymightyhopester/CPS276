@@ -18,7 +18,7 @@ class dateNote {
                 $sql = "INSERT INTO date_notes(file_date,file_note)VALUES(:file_date,:file_note)";
 
                 $bindings = [
-                    [':file_date',$file_date,'timestamp'],
+                    [':file_date',$file_date,'int'],
                     [':file_note',$file_note,'str'],
                 ];
 
