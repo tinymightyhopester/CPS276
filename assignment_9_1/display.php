@@ -20,6 +20,8 @@ $dateNote = new dateNote();
     <div class="container">
       <h1>Display Notes</h1>
 
+      <?php echo $dateNote->getDateNotes(); ?>
+
       <p><a href='https://russet-v8.wccnet.edu/~hheck/CPS276/assignment_9_1/add.php'>Add Note</a></p>
 
       <form method="post" action="display.php">

@@ -45,8 +45,8 @@ class dateNote {
                 $sql = "SELECT file_date, file_note FROM date_notes WHERE file_date BETWEEN :beginningDate AND :endDate ORDER BY file_date DESC";
 
                 $bindings = [
-                    [':beginningDate',$beginningDate,'timestamp'],
-                    [':endDate',$endDate,'timestamp'],
+                    [':beginningDate',$beginningDate,'int'],
+                    [':endDate',$endDate,'int'],
                 ];
 
                 $records = $pdo->selectBinded($sql, $bindings);
@@ -71,7 +71,8 @@ class dateNote {
     private function makeList($records){
         $list = '<ol>';
         foreach ($records as $row){
-            $list .= "<li><p>{$row['file_date']}{$row['file_note']}</a></p></li>";
+            $dt = date('m/d/Y H:i:s',$row['file_date']);
+            $list .= "<li><p>date and time:{$dt} note:{$row['file_note']}</p></li>";
         }
         $list .= '</ol>';
 		return $list;
