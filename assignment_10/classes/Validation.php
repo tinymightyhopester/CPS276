@@ -10,6 +10,7 @@ class Validation{
 		switch($regex){
 			case "name": return $this->name($value); break;
 			case "phone": return $this->phone($value); break;
+            case "email": return $this->email($value); break;
 			
 			
 		}
@@ -28,6 +29,10 @@ class Validation{
 		return $this->setError($match);
 	}
 
+    private function email($value){
+		$match = preg_match('/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix', $value);
+		return $this->setError($match);
+	}
 	
 	private function setError($match){
 		if(!$match){
