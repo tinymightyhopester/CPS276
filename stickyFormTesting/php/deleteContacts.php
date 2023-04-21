@@ -7,7 +7,7 @@ function init(){
         if(isset($_POST['chkbx'])){
             $error = false;
             foreach($_POST['chkbx'] as $id){
-                $pdo = new PdoMethods();
+                $pdo = new Pdo_methods();
 
                 $sql = "DELETE FROM contactMod WHERE id=:id";
                 
@@ -28,7 +28,7 @@ function init(){
     
     $output = "";
     
-    $pdo = new PdoMethods();
+    $pdo = new Pdo_methods();
 
     /* HERE I CREATE THE SQL STATEMENT I AM BINDING THE PARAMETERS */
     $sql = "SELECT * FROM contactMod";

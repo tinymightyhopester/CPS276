@@ -83,7 +83,7 @@ function addData($post){
       //print_r($_POST);
       require_once('classes/Pdo_methods.php');
 
-      $pdo = new PdoMethods();
+      $pdo = new Pdo_methods();
 
       $sql = "INSERT INTO contactMod (name, phone, state, financial, eye) VALUES (:name, :phone, :state, :financial, :eye)";
 
