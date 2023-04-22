@@ -1,7 +1,7 @@
 <?php
 
 /* HERE I REQUIRE AND USE THE STICKYFORM CLASS THAT DOES ALL THE VALIDATION AND CREATES THE STICKY FORM.  THE STICKY FORM CLASS USES THE VALIDATION CLASS TO DO THE VALIDATION WORK.*/
-require_once('classes/StickyForm.php');
+require_once('/home/h/h/hheck/public_html/CPS276/assignment_10/classes/StickyForm.php');
 $stickyForm = new StickyForm();
 
 /*THE INIT FUNCTION IS WRITTEN TO START EVERYTHING OFF IT IS CALLED FROM THE INDEX.PHP PAGE */
@@ -166,32 +166,47 @@ $options = $stickyForm->createOptions($elementsArr['state']);
 $form = <<<HTML
     <form method="post" action="index.php?page=addContact">
     <div class="form-group">
-      <label for="name">Name (letters only){$elementsArr['name']['errorOutput']}</label>
-      <input type="text" class="form-control" id="name" name="name" value="{$elementsArr['name']['value']}" >
+        <label for="name">Name (letters only){$elementsArr['name']['errorOutput']}</label>
+        <input type="text" class="form-control" id="name" name="name" value="{$elementsArr['name']['value']}" >
     </div>
     <div class="form-group">
-      <label for="phone">Phone (format 999.999.9999) {$elementsArr['phone']['errorOutput']}</label>
-      <input type="text" class="form-control" id="phone" name="phone" value="{$elementsArr['phone']['value']}" >
+        <label for="address">Address{$elementsArr['address']['errorOutput']}</label>
+        <input type="text" class="form-control" id="address" name="address" value="{$elementsArr['address']['value']}" >
     </div>
-            
     <div class="form-group">
-      <label for="state">State</label>
-      <select class="form-control" id="state" name="state">
+        <label for="city">City{$elementsArr['city']['errorOutput']}</label>
+        <input type="text" class="form-control" id="city" name="city" value="{$elementsArr['city']['value']}" >
+    </div>
+    <div class="form-group">
+        <label for="state">State</label>
+        <select class="form-control" id="state" name="state">
         $options
-      </select>
+        </select>
     </div>
-    <p>Please check all financial options (you must check at least one):{$elementsArr['contacts']['errorOutput']}</p>
+    <div class="form-group">
+        <label for="phone">Phone (format 999.999.9999) {$elementsArr['phone']['errorOutput']}</label>
+        <input type="text" class="form-control" id="phone" name="phone" value="{$elementsArr['phone']['value']}" >
+    </div>
+    <div class="form-group">
+        <label for="email">Email{$elementsArr['email']['errorOutput']}</label>
+        <input type="text" class="form-control" id="email" name="email" value="{$elementsArr['email']['value']}" >
+    </div>
+    <div class="form-group">
+        <label for="dob">Date of birth{$elementsArr['dob']['errorOutput']}</label>
+        <input type="text" class="form-control" id="dob" name="dob" value="{$elementsArr['dob']['value']}" >
+    </div>        
+    <p>Please check all contact options (you must check at least one):{$elementsArr['contacts']['errorOutput']}</p>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" name="contacts[]" id="contacts1" value="Newsletter" {$elementsArr['contacts']['status']['Newsletter']}>
-      <label class="form-check-label" for="contacts1">Newsletter</label>
+        <input class="form-check-input" type="checkbox" name="contacts[]" id="contacts1" value="Newsletter" {$elementsArr['contacts']['status']['Newsletter']}>
+        <label class="form-check-label" for="contacts1">Newsletter</label>
     </div>
     <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" name="contacts[]" id="contacts2" value="EmailUpdates" {$elementsArr['contacts']['status']['EmailUpdates']}>
-      <label class="form-check-label" for="contacts2">Email updates</label>
+        <input class="form-check-input" type="checkbox" name="contacts[]" id="contacts2" value="EmailUpdates" {$elementsArr['contacts']['status']['EmailUpdates']}>
+        <label class="form-check-label" for="contacts2">Email updates</label>
     </div>
     <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" name="contacts[]" id="contacts3" value="TextUpdates" {$elementsArr['contacts']['status']['TextUpdates']}>
-      <label class="form-check-label" for="contacts3">Text updates</label>
+        <input class="form-check-input" type="checkbox" name="contacts[]" id="contacts3" value="TextUpdates" {$elementsArr['contacts']['status']['TextUpdates']}>
+        <label class="form-check-label" for="contacts3">Text updates</label>
     </div>
         
     <p>Please select an age range (optional):</p>
@@ -212,7 +227,7 @@ $form = <<<HTML
         <label class="form-check-label" for="ageRange4">51+</label>
     </div>
     <div>
-    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
     </div>
   </form>
 HTML;
