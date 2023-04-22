@@ -11,7 +11,7 @@ class Validation{
 			case "name": return $this->name($value); break;
 			case "phone": return $this->phone($value); break;
             case "email": return $this->email($value); break;
-			
+			case "address": return $this->email($value); break;
 			
 		}
 	}
@@ -31,6 +31,16 @@ class Validation{
 
     private function email($value){
 		$match = preg_match('/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix', $value);
+		return $this->setError($match);
+	}
+
+	private function address($value){
+		$match = preg_match('/[A-Za-z0-9\-\\,.]+/', $value);
+		return $this->setError($match);
+	}
+
+	private function dob($value){
+		$match = preg_match('/(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/', $value);
 		return $this->setError($match);
 	}
 	
