@@ -101,8 +101,7 @@ $elementsArr = [
         "value"=>["10-18"=>"", "19-30"=>"", "30-50"=>"", "51+"=>""]
     ]
 ];
-
-
+getForm("", $elementsArr);
 /*THIS FUNCTION CAN BE CALLED TO ADD DATA TO THE DATABASE */
 function addData($post){
   global $elementsArr;  
@@ -124,8 +123,8 @@ function addData($post){
         $contacts = substr($contacts, 0, -1);
       }
 
-      if(isset($_POST['age'])){
-        $age = $_POST['age'];
+      if(isset($_POST['ageRange'])){
+        $age = $_POST['ageRange'];
       }
       else {
         $age = "";
@@ -236,5 +235,4 @@ HTML;
 return [$acknowledgement, $form];
 
 }
-
 ?>
