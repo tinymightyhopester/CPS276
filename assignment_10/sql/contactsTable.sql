@@ -13,8 +13,8 @@ CREATE TABLE contacts
   phone    varchar(45)  NULL ,
   email    varchar(45)  NULL ,
   dob      varchar(45)  NULL ,
-  contacts varchar(140) NULL,
-  age      int NULL,
+  contacts varchar(140) NULL ,
+  age      varchar(45)  NULL ,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
