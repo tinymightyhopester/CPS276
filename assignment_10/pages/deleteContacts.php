@@ -53,6 +53,7 @@ function init(){
         <th>DOB</th>
         <th>Contact</th>
         <th>Age</th>
+        <th>Delete</th>
         </tr>
     </thead><tbody>";
 
