@@ -12,6 +12,7 @@ class Validation{
 			case "phone": return $this->phone($value); break;
             case "email": return $this->email($value); break;
 			case "address": return $this->email($value); break;
+			case "dob": return $this->dob($value); break;
 			
 		}
 	}
