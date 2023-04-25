@@ -3,7 +3,7 @@
 $path = "index.php?page=welcome";
 
 
-$nav=<<<HTML
+$adminNav=<<<HTML
     <nav>
         <ul>
             <li><a href="index.php?page=welcome">Welcome</a></li>
@@ -11,6 +11,15 @@ $nav=<<<HTML
             <li><a href="index.php?page=deleteContacts">Delete Contact(s)</a></li>
             <li><a href="index.php?page=addAdmin">Add Admin</a></li>
             <li><a href="index.php?page=deleteAdmins">Delete Admin(s)</a></li>
+        </ul>
+    </nav>
+HTML;
+$staffNav=<<<HTML
+    <nav>
+        <ul>
+            <li><a href="index.php?page=welcome">Welcome</a></li>
+            <li><a href="index.php?page=addContact">Add Contact Information</a></li>
+            <li><a href="index.php?page=deleteContacts">Delete Contact(s)</a></li>
         </ul>
     </nav>
 HTML;
