@@ -2,7 +2,13 @@
 
 $path = "index.php?page=welcome";
 
-
+$nav=<<<HTML
+    <nav>
+        <ul>
+            <li><a href="index.php?page=login">Login</a></li>
+        </ul>
+    </nav>
+HTML;
 $adminNav=<<<HTML
     <nav>
         <ul>
@@ -47,6 +53,12 @@ if(isset($_GET)){
 
     else if($_GET['page'] === "welcome"){
         require_once('pages/welcome.php');
+        $result = init();
+
+    }
+
+    else if($_GET['page'] === "login"){
+        require_once('pages/login.php');
         $result = init();
 
     }
