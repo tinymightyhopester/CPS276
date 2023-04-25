@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
   <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Index page</title>
+	<title>Login page</title>
 
 	<!--CSS style sheet goes here-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	<link rel="stylesheet" href="../css/main.css">
@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
       </header>
       <main>
         <p class="error"><?php echo $error; ?></p>
-        <form action="index.php" method="post">
+        <form action="login.php" method="post">
           <div class="form-group">
             <label>Email: <input type="text" name="email" class="form-control"></label>
             <label>Password: <input type="password" name="password" class="form-control"></label>
