@@ -2,7 +2,6 @@
 
 $path = "index.php?page=login";
 
-
 $adminNav=<<<HTML
     <nav>
         <ul>
@@ -53,7 +52,7 @@ if(isset($_GET)){
 
     else if($_GET['page'] === "login"){
         require_once('pages/login.php');
-        
+        $result = init();
 
     }
 
