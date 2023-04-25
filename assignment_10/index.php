@@ -29,24 +29,26 @@ if(isset($_POST['submit'])){
 	<title>Index page</title>
 
 	<!--CSS style sheet goes here-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	<link rel="stylesheet" href="../css/main.css">
   </head>
   <body>
-	<div id="wrapper">
-    <header>
-      <h1>Login</h1>
-    </header>
-    <main>
-      <p class="error"><?php echo $error; ?></p>
-      <form action="index.php" method="post">
-        <div class="form-group">
-          <label>Email: <input type="text" name="email" class="form-control"></label>
-          <label>Password: <input type="password" name="password" class="form-control"></label>
-          <input type="submit" name="submit" value="Login" class="btn btn-primary">
-        </div>
-      </form> 
-    </main>
+  <div class="container">
+    <div id="wrapper">
+      <header>
+        <br></br>
+        <h1>Login</h1>
+      </header>
+      <main>
+        <p class="error"><?php echo $error; ?></p>
+        <form action="index.php" method="post">
+          <div class="form-group">
+            <label>Email: <input type="text" name="email" class="form-control"></label>
+            <label>Password: <input type="password" name="password" class="form-control"></label>
+            <input type="submit" name="submit" value="Login" class="btn btn-primary">
+          </div>
+        </form> 
+      </main>
+    </div>
   </div>
   </body>
 </html>
