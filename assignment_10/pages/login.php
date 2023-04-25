@@ -54,7 +54,7 @@ $elementsArr = [
         "errorMessage"=>"<span style='color: red; margin-left: 15px;'>Password cannot be blank and must be a valid password</span>",
         "errorOutput"=>"",
         "type"=>"text",
-        "value"=>""
+        "value"=>"test"
     ]
 ];
 
