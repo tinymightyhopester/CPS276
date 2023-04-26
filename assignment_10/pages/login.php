@@ -14,16 +14,19 @@ function init(){
       
         //return checkUser($_POST);
 
-            if($_POST['email'] === "hheck@admin.com" && $_POST['password'] === "password"){
+            if($_POST['email'] === "hheck@admin.com" && $_POST['password'] === "test"){
             
                 session_start();
-                $_SESSION['access'] = "accessGranted";
+                $_SESSION['access'] = 'accessGranted';
 
+                //echo "<pre>first access";
+                //print_r($_SESSION);
+                //echo $_SESSION['access'];
                 /* HERE I STORE A FIRST NAME IN THE SESSION AS WELL AND WILL DISPLAY IT ON EVERY PAGE*/
                 //$_SESSION['name'] = $_POST['name'];
 
                 //session_regenerate_id();
-                header('location:welcome.php');
+                header('location:index.php?page=welcome');
             }
         }
         else {
@@ -60,7 +63,7 @@ function getForm($acknowledgement, $elementsArr){
     
     /* THIS IS A HEREDOC STRING WHICH CREATES THE FORM AND ADD THE APPROPRIATE VALUES AND ERROR MESSAGES */
     $form = <<<HTML
-        <form method="post" action="index.php?page=welcome">
+        <form method="post" action="index.php?page=login">
         <div class="form-group">
           <label for="email">Email{$elementsArr['email']['errorOutput']}</label>
           <input type="text" class="form-control" id="email" name="email" value="{$elementsArr['email']['value']}" >

@@ -26,27 +26,43 @@ HTML;
 if(isset($_GET)){
     if($_GET['page'] === "addContact"){
         require_once('pages/addContact.php');
+        security();
         $result = init();
     }
     
     else if($_GET['page'] === "deleteContacts"){
         require_once('pages/deleteContacts.php');
+        security();
         $result = init();
     }
 
-    if($_GET['page'] === "addAdmin"){
+    else if($_GET['page'] === "addAdmin"){
         require_once('pages/addAdmin.php');
+        security();
         $result = init();
     }
     
     else if($_GET['page'] === "deleteAdmins"){
         require_once('pages/deleteAdmins.php');
+        security();
         $result = init();
     }
 
     else if($_GET['page'] === "welcome"){
         require_once('pages/welcome.php');
+        security();
         $result = init();
+        //session_start();
+        //echo "<pre>";
+        //print_r($_SESSION);
+        
+        //if($_SESSION['access'] === "accessGranted"){
+            //header('location:index.php?page=welcome');
+
+            //$result = init();
+       // }else{
+            //header('location:index.php?page=login');
+       // }  
 
     }
 
@@ -63,6 +79,13 @@ if(isset($_GET)){
 
 else {
     header('location: '.$path);
+}
+
+function security(){
+    session_start();
+    if($_SESSION['access'] !== "accessGranted"){
+        header('location'.$path);
+    }
 }
 
 
