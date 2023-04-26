@@ -14,7 +14,7 @@ function init(){
       
         //return checkUser($_POST);
 
-            if($_POST['email'] === "admin" && $_POST['password'] === "password"){
+            if($_POST['email'] === "hheck@admin.com" && $_POST['password'] === "password"){
             
                 session_start();
                 $_SESSION['access'] = "accessGranted";
@@ -60,7 +60,7 @@ function getForm($acknowledgement, $elementsArr){
     
     /* THIS IS A HEREDOC STRING WHICH CREATES THE FORM AND ADD THE APPROPRIATE VALUES AND ERROR MESSAGES */
     $form = <<<HTML
-        <form method="post" action="index.php?page=login">
+        <form method="post" action="index.php?page=welcome">
         <div class="form-group">
           <label for="email">Email{$elementsArr['email']['errorOutput']}</label>
           <input type="text" class="form-control" id="email" name="email" value="{$elementsArr['email']['value']}" >
@@ -78,5 +78,5 @@ function getForm($acknowledgement, $elementsArr){
     /* HERE I RETURN AN ARRAY THAT CONTAINS AN ACKNOWLEDGEMENT AND THE FORM.  THIS IS DISPLAYED ON THE INDEX PAGE. */
     return [$acknowledgement, $form];
     
-    }
+}
 ?>
