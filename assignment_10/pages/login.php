@@ -12,23 +12,19 @@ function init(){
 
         if($postArr['masterStatus']['status'] == "noerrors"){
       
-        return checkUser($_POST);
+        //return checkUser($_POST);
 
-    /* IF THE USERNAME AND PASSWORD MATCH THEN REDIRECT TO */
-        // if($_POST['email'] === "admin" && $_POST['password'] === "password"){
+            if($_POST['email'] === "admin" && $_POST['password'] === "password"){
             
-        //     session_start();
-        //     $_SESSION['access'] = "accessGranted";
+                session_start();
+                $_SESSION['access'] = "accessGranted";
 
-        //     /* HERE I STORE A FIRST NAME IN THE SESSION AS WELL AND WILL DISPLAY IT ON EVERY PAGE*/
-        //     $_SESSION['name'] = $_POST['name'];
+                /* HERE I STORE A FIRST NAME IN THE SESSION AS WELL AND WILL DISPLAY IT ON EVERY PAGE*/
+                //$_SESSION['name'] = $_POST['name'];
 
-        //     //session_regenerate_id();
-        //     header('location:welcome.php');
-        // }
-        // else {
-        //     $error = "Incorrect username or password";
-        // }
+                //session_regenerate_id();
+                header('location:welcome.php');
+            }
         }
         else {
             return getForm("", $elementsArr);
@@ -54,7 +50,8 @@ $elementsArr = [
         "errorMessage"=>"<span style='color: red; margin-left: 15px;'>Password cannot be blank and must be a valid password</span>",
         "errorOutput"=>"",
         "type"=>"text",
-        "value"=>"test"
+        "value"=>"test",
+        "regex"=>"name"
     ]
 ];
 
