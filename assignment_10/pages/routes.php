@@ -39,12 +39,14 @@ if(isset($_GET)){
     else if($_GET['page'] === "addAdmin"){
         require_once('pages/addAdmin.php');
         security();
+        accessStatusLevel();
         $result = init();
     }
     
     else if($_GET['page'] === "deleteAdmins"){
         require_once('pages/deleteAdmins.php');
         security();
+        accessStatusLevel();
         $result = init();
     }
 
@@ -87,7 +89,12 @@ function security(){
         header('location'.$path);
     }
 }
-
+function accessStatusLevel(){
+    session_start();
+    if($_SESSION['status'] !== "admin"){
+        header('location'.$path);
+    }
+}
 
 
 ?>

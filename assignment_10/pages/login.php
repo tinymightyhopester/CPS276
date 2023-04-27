@@ -1,7 +1,7 @@
 <?php
 
 require_once('classes/StickyForm.php');
-
+require_once('classes/Pdo_methods.php');
 $stickyForm = new StickyForm();
 
 function init(){
@@ -13,24 +13,35 @@ function init(){
 
         if($postArr['masterStatus']['status'] == "noerrors"){
       
-        //return checkUser($_POST);
+            $pdo = new Pdo_methods();
+            $sql = "SELECT * FROM admins WHERE email=:email";
 
-            if($_POST['email'] === "hheck@admin.com" && $_POST['password'] === "test"){
-            
-                session_start();
-                $_SESSION['access'] = 'accessGranted';
+            $bindings = [
+                [':email', $_POST['email'], 'str'],
+            ];
+            $record = $pdo->selectBinded($sql, $bindings);
 
-                //echo "<pre>first access";
-                //print_r($_SESSION);
-                //echo $_SESSION['access'];
-                /* HERE I STORE A FIRST NAME IN THE SESSION AS WELL AND WILL DISPLAY IT ON EVERY PAGE*/
-                //$_SESSION['name'] = $_POST['name'];
+            if(count($record) != 0){
 
-                //session_regenerate_id();
-                header('location:index.php?page=welcome');
+                if(password_verify($_POST['password'], $record[0]['password'])){
+	                session_start();
+	                $_SESSION['access'] = "accessGranted";
+
+                    if($record[0]['status']=="admin"){
+                        $_SESSION['status'] = 'admin';
+                        header('location:index.php?page=welcome');
+                    }
+                    if($record[0]['status']=="staff"){
+                        $_SESSION['status'] = 'staff';
+                        header('location:index.php?page=welcome');
+                    }
+                }else{
+                    return getForm("", $elementsArr);
+                }
+            }else{
+                return getForm("", $elementsArr);
             }
-        }
-        else {
+        }else {
             return getForm("", $elementsArr);
         }
     }else {
@@ -54,7 +65,7 @@ $elementsArr = [
         "errorMessage"=>"<span style='color: red; margin-left: 15px;'>Password cannot be blank and must be a valid password</span>",
         "errorOutput"=>"",
         "type"=>"text",
-        "value"=>"test",
+        "value"=>"password",
         "regex"=>"name"
     ]
 ];
