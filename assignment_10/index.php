@@ -16,7 +16,7 @@ require_once('pages/routes.php');
     <br></br>
 		<?php
 			/* THIS IS THE PHP PAGE  */
-			//echo $nav;
+			echo $nav;
 			
 			/* THE ACKNOWLEDGEMENT GOES HERE AS THE FIRST INDEX OF THE ARRAY  */
 			echo $result[0]; 
