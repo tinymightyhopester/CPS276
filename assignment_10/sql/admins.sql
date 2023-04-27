@@ -13,7 +13,3 @@ CREATE TABLE admins
   PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-INSERT INTO admins(id, name, email, password, status)
-VALUES(1, 'Hope Heck', 'hheck@admins.com', password_hash('password', PASSWORD_DEFAULT), 'admin');
-INSERT INTO admins(id, name, email, password, status)
-VALUES(2, 'Hope Heck', 'hheck@staff.com', password_hash('password', PASSWORD_DEFAULT), 'staff');

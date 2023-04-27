@@ -42,10 +42,10 @@ $elementsArr = [
     ],
 	"name"=>[
 	    "errorMessage"=>"<span style='color: red; margin-left: 15px;'>Name cannot be blank and must be a standard name</span>",
-        "errorOutput"=>"",
-        "type"=>"text",
-        "value"=>"Scott",
-		"regex"=>"name"
+      "errorOutput"=>"",
+      "type"=>"text",
+      "value"=>"Scott",
+		  "regex"=>"name"
 	],
     "email"=>[
         "errorMessage"=>"<span style='color: red; margin-left: 15px;'>Email cannot be blank and must be a standard email</span>",
@@ -58,8 +58,8 @@ $elementsArr = [
         "action"=>"required",
         "errorOutput"=>"",
         "type"=>"text",
-        "value"=>"password"
-        //"regex"=>""
+        "value"=>"password",
+        "regex"=>"name"
     ],
     "status"=>[
         "type"=>"select",
@@ -82,7 +82,7 @@ function addData($post){
       $bindings = [
         [':name',$post['name'],'str'],
         [':email',$post['email'],'str'],
-        [':password',$post['password'],'str'],
+        [':password',password_hash($post['password'], PASSWORD_DEFAULT),'str'],
         [':status',$post['status'],'str']
       ];
 
@@ -92,7 +92,7 @@ function addData($post){
         return getForm("<p>There was a problem processing your form</p>", $elementsArr);
       }
       else {
-        return getForm("<p>Contact Information Added</p>", $elementsArr);
+        return getForm("<p>Admin/Staff Information Added</p>", $elementsArr);
       }
       
 }

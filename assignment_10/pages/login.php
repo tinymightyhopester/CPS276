@@ -1,6 +1,7 @@
 <?php
 
 require_once('classes/StickyForm.php');
+
 $stickyForm = new StickyForm();
 
 function init(){
