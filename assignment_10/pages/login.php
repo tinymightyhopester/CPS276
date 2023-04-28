@@ -37,13 +37,13 @@ function init(){
                         header('location:index.php?page=welcome');
                     }
                 }else{
-                    return getForm("", $elementsArr);
+                    return getForm("<p> Incorrect username or password</p>",$postArr);
                 }
             }else{
-                return getForm("", $elementsArr);
+                return getForm("<p> Incorrect username or password</p>",$postArr);
             }
         }else {
-            return getForm("", $elementsArr);
+            return getForm("<p> Incorrect username or password</p>",$postArr);
         }
     }else {
         return getForm("", $elementsArr);
@@ -57,7 +57,7 @@ $elementsArr = [
     ],
     "email"=>[
         "errorMessage"=>"<span style='color: red; margin-left: 15px;'>Email cannot be blank and must be a standard email</span>",
-        "errorOutput"=>"Must be a standard email and password",
+        "errorOutput"=>"",
         "type"=>"text",
         "value"=>"hheck@admin.com",
         "regex"=>"email"
@@ -65,7 +65,7 @@ $elementsArr = [
     "password"=>[
         "errorMessage"=>"<span style='color: red; margin-left: 15px;'>Password cannot be blank and must be a valid password</span>",
         "errorOutput"=>"",
-        "type"=>"text",
+        "type"=>"password",
         "value"=>"password",
         "regex"=>"name"
     ]
@@ -83,7 +83,7 @@ function getForm($acknowledgement, $elementsArr){
         </div>
         <div class="form-group">
           <label for="password">Password{$elementsArr['password']['errorOutput']}</label>
-          <input type="text" class="form-control" id="password" name="password" value="{$elementsArr['password']['value']}" >
+          <input type="password" class="form-control" id="password" name="password" value="{$elementsArr['password']['value']}" >
         </div>
         <div>
         <button type="submit" name="submit" class="btn btn-primary">Login</button>
