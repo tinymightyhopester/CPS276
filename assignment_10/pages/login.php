@@ -27,11 +27,11 @@ function init(){
 	                session_start();
 	                $_SESSION['access'] = "accessGranted";
 
-                    if($record[0]['status']=="admin"){
+                    if($record[0]['status']==="admin"){
                         $_SESSION['status'] = 'admin';
                         header('location:index.php?page=welcome');
                     }
-                    if($record[0]['status']=="staff"){
+                    if($record[0]['status']==="staff"){
                         $_SESSION['status'] = 'staff';
                         header('location:index.php?page=welcome');
                     }

@@ -3,32 +3,7 @@
 $path = "index.php?page=login";
 $nav = <<<HTML
 <nav>
-    <ul>
-        <li><a href="index.php?page=welcome">Welcome</a></li>
-        <li><a href="index.php?page=addContact">Add Contact Information</a></li>
-        <li><a href="index.php?page=deleteContacts">Delete Contact(s)</a></li>
-    </ul>
 </nav>
-HTML;
-$adminNav=<<<HTML
-    <nav>
-        <ul>
-            <li><a href="index.php?page=welcome">Welcome</a></li>
-            <li><a href="index.php?page=addContact">Add Contact Information</a></li>
-            <li><a href="index.php?page=deleteContacts">Delete Contact(s)</a></li>
-            <li><a href="index.php?page=addAdmin">Add Admin</a></li>
-            <li><a href="index.php?page=deleteAdmins">Delete Admin(s)</a></li>
-        </ul>
-    </nav>
-HTML;
-$staffNav=<<<HTML
-    <nav>
-        <ul>
-            <li><a href="index.php?page=welcome">Welcome</a></li>
-            <li><a href="index.php?page=addContact">Add Contact Information</a></li>
-            <li><a href="index.php?page=deleteContacts">Delete Contact(s)</a></li>
-        </ul>
-    </nav>
 HTML;
 
 if(isset($_GET)){
@@ -67,18 +42,6 @@ if(isset($_GET)){
         security();
         $nav = setNav();
         $result = init();
-        //session_start();
-        //echo "<pre>";
-        //print_r($_SESSION);
-        
-        //if($_SESSION['access'] === "accessGranted"){
-            //header('location:index.php?page=welcome');
-
-            //$result = init();
-       // }else{
-            //header('location:index.php?page=login');
-       // }  
-
     }
 
     else if($_GET['page'] === "login"){

@@ -51,7 +51,7 @@ function init(){
         <th>Phone</th>
         <th>Email</th>
         <th>DOB</th>
-        <th>Contact</th>
+        <th>Contacts</th>
         <th>Age</th>
         <th>Delete</th>
         </tr>
@@ -65,7 +65,7 @@ function init(){
         <td>{$row['phone']}</td>
         <td>{$row['email']}</td>
         <td>{$row['dob']}</td>
-        <td>{$row['contact']}</td>
+        <td>{$row['contacts']}</td>
         <td>{$row['age']}</td>
         <td><input type='checkbox' name='chkbx[]' value='{$row['id']}' /></td></tr>";
     }
