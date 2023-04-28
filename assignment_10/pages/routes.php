@@ -10,7 +10,6 @@ if(isset($_GET)){
     if($_GET['page'] === "addContact"){
         require_once('pages/addContact.php');
         security();
-        print($elementsArr['address']['value']);
         $nav = setNav();
         $result = init();
     }
@@ -26,7 +25,6 @@ if(isset($_GET)){
         require_once('pages/addAdmin.php');
         security();
         accessStatusLevel();
-        print_r($_SESSION);
         $nav = setNav();
         $result = init();
     }

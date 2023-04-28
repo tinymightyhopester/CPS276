@@ -11,7 +11,7 @@ class Validation{
 			case "name": return $this->name($value); break;
 			case "phone": return $this->phone($value); break;
             case "email": return $this->email($value); break;
-			case "address": return $this->email($value); break;
+			case "address": return $this->address($value); break;
 			case "dob": return $this->dob($value); break;
 			case "password": return $this->password($value); break;
 		}
@@ -36,7 +36,7 @@ class Validation{
 	}
 
 	private function address($value){
-		$match = preg_match('/^\d+([A-Z\s-.])+$/i', $value);
+		$match = preg_match('/\d+\s[a-zA-Z0-9]+/', $value);
 		return $this->setError($match);
 	}
 
