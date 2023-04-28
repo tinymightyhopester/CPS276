@@ -102,6 +102,8 @@ $elementsArr = [
         "status"=>["Newsletter"=>"", "EmailUpdates"=>"", "TextUpdates"=>""]
     ],
     "ageRange"=>[
+        "errorMessage"=>"<span style='color: red; margin-left: 15px;'>You must select an age range</span>",
+        "errorOutput"=>"",
         "action"=>"required",
         "type"=>"radio",
         "value"=>["10-18"=>"", "19-30"=>"", "30-50"=>"", "51+"=>""]
@@ -214,7 +216,7 @@ $form = <<<HTML
         <label class="form-check-label" for="contacts3">Text updates</label>
     </div>
         
-    <p>Please select an age range (optional):</p>
+    <p>Please select an age range:{$elementsArr['ageRange']['errorOutput']}</p>
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="ageRange" id="ageRange1" value="10-18"  {$elementsArr['ageRange']['value']['10-18']}>
         <label class="form-check-label" for="ageRange1">10-18</label>

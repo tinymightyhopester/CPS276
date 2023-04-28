@@ -58,8 +58,9 @@ $elementsArr = [
       ],
     "password"=>[
         "action"=>"required",
+        "errorMessage"=>"<span style='color: red; margin-left: 15px;'>Password cannot be blank and must be a standard password</span>",
         "errorOutput"=>"",
-        "type"=>"password",
+        "type"=>"text",
         "value"=>"password",
         "regex"=>"password"
     ],
@@ -114,38 +115,38 @@ function addData($post){
 /*THIS IS THEGET FROM FUCTION WHICH WILL BUILD THE FORM BASED UPON UPON THE (UNMODIFIED OF MODIFIED) ELEMENTS ARRAY. */
 function getForm($acknowledgement, $elementsArr){
 
-global $stickyForm;
-$options = $stickyForm->createOptions($elementsArr['status']);
+  global $stickyForm;
+  $options = $stickyForm->createOptions($elementsArr['status']);
 
-/* THIS IS A HEREDOC STRING WHICH CREATES THE FORM AND ADD THE APPROPRIATE VALUES AND ERROR MESSAGES */
-$form = <<<HTML
-    <form method="post" action="index.php?page=addAdmin">
-    <div class="form-group">
-        <label for="name">Name (letters only){$elementsArr['name']['errorOutput']}</label>
-        <input type="text" class="form-control" id="name" name="name" value="{$elementsArr['name']['value']}" >
-    </div>
-    <div class="form-group">
-        <label for="email">Email{$elementsArr['email']['errorOutput']}</label>
-        <input type="text" class="form-control" id="email" name="email" value="{$elementsArr['email']['value']}" >
-    </div>
-    <div class="form-group">
-        <label for="password">Password{$elementsArr['password']['errorOutput']}</label>
-        <input type="password" class="form-control" id="password" name="password" value="{$elementsArr['password']['value']}" >
-    </div>
-    <div class="form-group">
-        <label for="Status">Status</label>
-        <select class="form-control" id="status" name="status">
-        $options
-        </select>
-    </div>      
-    <div>
-        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-    </div>
-  </form>
-HTML;
+  /* THIS IS A HEREDOC STRING WHICH CREATES THE FORM AND ADD THE APPROPRIATE VALUES AND ERROR MESSAGES */
+  $form = <<<HTML
+      <form method="post" action="index.php?page=addAdmin">
+      <div class="form-group">
+          <label for="name">Name (letters only) {$elementsArr['name']['errorOutput']}</label>
+          <input type="text" class="form-control" id="name" name="name" value="{$elementsArr['name']['value']}" >
+      </div>
+      <div class="form-group">
+          <label for="email">Email {$elementsArr['email']['errorOutput']}</label>
+          <input type="text" class="form-control" id="email" name="email" value="{$elementsArr['email']['value']}" >
+      </div>
+      <div class="form-group">
+          <label for="password">Password {$elementsArr['password']['errorOutput']}</label>
+          <input type="text" class="form-control" id="password" name="password" value="{$elementsArr['password']['value']}" >
+      </div>
+      <div class="form-group">
+          <label for="Status">Status</label>
+          <select class="form-control" id="status" name="status">
+          $options
+          </select>
+      </div>      
+      <div>
+          <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  HTML;
 
-/* HERE I RETURN AN ARRAY THAT CONTAINS AN ACKNOWLEDGEMENT AND THE FORM.  THIS IS DISPLAYED ON THE INDEX PAGE. */
-return [$acknowledgement, $form];
+  /* HERE I RETURN AN ARRAY THAT CONTAINS AN ACKNOWLEDGEMENT AND THE FORM.  THIS IS DISPLAYED ON THE INDEX PAGE. */
+  return [$acknowledgement, $form];
 
 }
 ?>
