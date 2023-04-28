@@ -46,7 +46,7 @@ class Validation{
 	}
 	
 	private function password($value){
-		$match = preg_match('', $value);
+		$match = preg_match('/^(?=.*[a-zA-Z\d].*)[a-zA-Z\d!@#$%&*]{7,}$/', $value);
 		return $this->setError($match);
 	}
 	

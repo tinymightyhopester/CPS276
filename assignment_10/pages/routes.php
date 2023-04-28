@@ -10,6 +10,7 @@ if(isset($_GET)){
     if($_GET['page'] === "addContact"){
         require_once('pages/addContact.php');
         security();
+        print($elementsArr['address']['value']);
         $nav = setNav();
         $result = init();
     }
@@ -42,7 +43,6 @@ if(isset($_GET)){
     else if($_GET['page'] === "welcome"){
         require_once('pages/welcome.php');
         security();
-        print_r($_SESSION);
         $nav = setNav();
         $result = init();
     }

@@ -64,7 +64,7 @@ $elementsArr = [
     "status"=>[
         "type"=>"select",
         "options"=>["staff"=>"Staff","admin"=>"Admin"],
-        "selected"=>"staff",
+        "selected"=>"staff"
     ]
 ];
 getForm("", $elementsArr);

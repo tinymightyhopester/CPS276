@@ -48,11 +48,11 @@ $elementsArr = [
 		"regex"=>"name"
 	],
     "address"=>[
-        "errorMessage"=>"<span style='color: red; margin-left: 15px;'>Address cannot be blank</span>",
+        "errorMessage"=>"<span style='color: red; margin-left: 15px;'>Address cannot be blank and must be standard address</span>",
         "errorOutput"=>"",
         "type"=>"text",
-        "value"=>"123 Anyplace St",
-        "regex"=>"address"
+        "value"=>"123 Somestreet",
+        "regex"=>"name"
     ],
     "city"=>[
 	    "errorMessage"=>"<span style='color: red; margin-left: 15px;'>City cannot be blank</span>",
@@ -63,7 +63,7 @@ $elementsArr = [
 	],
     "state"=>[
         "type"=>"select",
-        "options"=>["mi"=>"Michigan","oh"=>"Ohio","pa"=>"Pennslyvania","tx"=>"Texas"],
+        "options"=>["mi"=>"Michigan","oh"=>"Ohio","pa"=>"Pennslyvania","tx"=>"Texas","mo"=>"Missouri"],
         "selected"=>"mi",
         "regex"=>"name"
     ],
