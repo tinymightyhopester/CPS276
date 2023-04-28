@@ -13,6 +13,7 @@ class Validation{
             case "email": return $this->email($value); break;
 			case "address": return $this->address($value); break;
 			case "dob": return $this->dob($value); break;
+			case "city": return $this->city($value); break;
 			case "password": return $this->password($value); break;
 		}
 	}
@@ -21,7 +22,8 @@ class Validation{
 		
 	/* THE REST OF THE FUNCTIONS ARE THE INDIVIDUAL REGULAR EXPRESSION FUNCTIONS*/
 	private function name($value){
-		$match = preg_match('/^[a-z-\' ]{1,50}$/i', $value);
+		//$match = preg_match("/^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/", $value);
+		$match = preg_match("/^[a-zA-Z.'\- ]+$/", $value);
 		return $this->setError($match);
 	}
 
@@ -42,6 +44,11 @@ class Validation{
 
 	private function dob($value){
 		$match = preg_match('/(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/', $value);
+		return $this->setError($match);
+	}
+
+	private function city($value){
+		$match = preg_match('/^[A-Za-z]+$/', $value);
 		return $this->setError($match);
 	}
 	

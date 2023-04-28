@@ -45,6 +45,7 @@ $elementsArr = [
         "errorOutput"=>"",
         "type"=>"text",
         "value"=>"Scott",
+        "action"=>"required",
 		"regex"=>"name"
 	],
     "address"=>[
@@ -52,6 +53,7 @@ $elementsArr = [
         "errorOutput"=>"",
         "type"=>"text",
         "value"=>"123 Somestreet",
+        "action"=>"required",
         "regex"=>"address"
     ],
     "city"=>[
@@ -59,19 +61,21 @@ $elementsArr = [
         "errorOutput"=>"",
         "type"=>"text",
         "value"=>"Sometown",
-		"regex"=>"name"
+        "action"=>"required",
+		"regex"=>"city"
 	],
     "state"=>[
         "type"=>"select",
+        "action"=>"required",
         "options"=>["mi"=>"Michigan","oh"=>"Ohio","pa"=>"Pennslyvania","tx"=>"Texas","mo"=>"Missouri"],
-        "selected"=>"mi",
-        "regex"=>"name"
+        "selected"=>"mi"
     ],
 	"phone"=>[
 		"errorMessage"=>"<span style='color: red; margin-left: 15px;'>Phone cannot be blank and must be a valid phone number</span>",
         "errorOutput"=>"",
         "type"=>"text",
 		"value"=>"999.999.9999",
+        "action"=>"required",
 		"regex"=>"phone"
     ],
     "email"=>[
@@ -79,6 +83,7 @@ $elementsArr = [
         "errorOutput"=>"",
         "type"=>"text",
         "value"=>"somename@example.com",
+        "action"=>"required",
         "regex"=>"email"
       ],
     "dob"=>[
@@ -86,6 +91,7 @@ $elementsArr = [
         "errorOutput"=>"",
         "type"=>"text",
         "value"=>"08/28/1983",
+        "action"=>"required",
         "regex"=>"dob"
     ],
     "contacts"=>[
@@ -96,7 +102,7 @@ $elementsArr = [
         "status"=>["Newsletter"=>"", "EmailUpdates"=>"", "TextUpdates"=>""]
     ],
     "ageRange"=>[
-        "action"=>"notRequired",
+        "action"=>"required",
         "type"=>"radio",
         "value"=>["10-18"=>"", "19-30"=>"", "30-50"=>"", "51+"=>""]
     ]

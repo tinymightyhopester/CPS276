@@ -41,6 +41,7 @@ $elementsArr = [
         "type"=>"masterStatus"
     ],
 	"name"=>[
+      "action"=>"required",
 	    "errorMessage"=>"<span style='color: red; margin-left: 15px;'>Name cannot be blank and must be a standard name</span>",
       "errorOutput"=>"",
       "type"=>"text",
@@ -48,6 +49,7 @@ $elementsArr = [
 		  "regex"=>"name"
 	],
     "email"=>[
+        "action"=>"required",
         "errorMessage"=>"<span style='color: red; margin-left: 15px;'>Email cannot be blank and must be a standard email</span>",
         "errorOutput"=>"",
         "type"=>"text",
@@ -57,11 +59,12 @@ $elementsArr = [
     "password"=>[
         "action"=>"required",
         "errorOutput"=>"",
-        "type"=>"text",
+        "type"=>"password",
         "value"=>"password",
-        "regex"=>"name"
+        "regex"=>"password"
     ],
     "status"=>[
+        "action"=>"required",
         "type"=>"select",
         "options"=>["staff"=>"Staff","admin"=>"Admin"],
         "selected"=>"staff"
@@ -127,7 +130,7 @@ $form = <<<HTML
     </div>
     <div class="form-group">
         <label for="password">Password{$elementsArr['password']['errorOutput']}</label>
-        <input type="text" class="form-control" id="password" name="password" value="{$elementsArr['password']['value']}" >
+        <input type="password" class="form-control" id="password" name="password" value="{$elementsArr['password']['value']}" >
     </div>
     <div class="form-group">
         <label for="Status">Status</label>
