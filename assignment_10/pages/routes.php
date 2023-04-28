@@ -83,7 +83,17 @@ if(isset($_GET)){
 
     else if($_GET['page'] === "login"){
         require_once('pages/login.php');
+        session_start();
+        $nav = <<<HTML
+        <nav>
+        </nav>
+        HTML;;
         $result = init();
+
+    }
+
+    else if($_GET['page'] === "logout"){
+        require_once('logout.php');
 
     }
 
@@ -115,9 +125,10 @@ function setNav(){
                 <li><a href="index.php?page=welcome">Welcome</a></li>
                 <li><a href="index.php?page=addContact">Add Contact Information</a></li>
                 <li><a href="index.php?page=deleteContacts">Delete Contact(s)</a></li>
+                <li><a href="index.php?page=logout">Logout</a></li>
             </ul>
         </nav>
-    HTML;
+        HTML;
     }
     if($_SESSION['status'] === "admin"){
         $nav = <<<HTML
@@ -128,9 +139,10 @@ function setNav(){
                 <li><a href="index.php?page=deleteContacts">Delete Contact(s)</a></li>
                 <li><a href="index.php?page=addAdmin">Add Admin</a></li>
                 <li><a href="index.php?page=deleteAdmins">Delete Admin(s)</a></li>
+                <li><a href="index.php?page=logout">Logout</a></li>
             </ul>
         </nav>
-    HTML;
+        HTML;
     }
     return $nav;
 }

@@ -36,7 +36,7 @@ class Validation{
 	}
 
 	private function address($value){
-		$match = preg_match('/[A-Za-z0-9\-\\,.]+/', $value);
+		$match = preg_match('/^\d+([A-Z\s-.])+$/i', $value);
 		return $this->setError($match);
 	}
 
