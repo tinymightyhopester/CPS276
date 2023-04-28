@@ -33,7 +33,6 @@ if(isset($_GET)){
         require_once('pages/deleteAdmins.php');
         security();
         accessStatusLevel();
-        print_r($_SESSION);
         $nav = setNav();
         $result = init();
     }
