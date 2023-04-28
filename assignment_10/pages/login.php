@@ -26,6 +26,7 @@ function init(){
                 if(password_verify($_POST['password'], $record[0]['password'])){
 	                session_start();
 	                $_SESSION['access'] = "accessGranted";
+                    $_SESSION['name'] = $record[0]['name'];
 
                     if($record[0]['status']==="admin"){
                         $_SESSION['status'] = 'admin';
@@ -56,7 +57,7 @@ $elementsArr = [
     ],
     "email"=>[
         "errorMessage"=>"<span style='color: red; margin-left: 15px;'>Email cannot be blank and must be a standard email</span>",
-        "errorOutput"=>"",
+        "errorOutput"=>"Must be a standard email and password",
         "type"=>"text",
         "value"=>"hheck@admin.com",
         "regex"=>"email"
@@ -77,7 +78,7 @@ function getForm($acknowledgement, $elementsArr){
     $form = <<<HTML
         <form method="post" action="index.php?page=login">
         <div class="form-group">
-          <label for="email">Email{$elementsArr['email']['errorOutput']}</label>
+          <label for="email">Email {$elementsArr['email']['errorOutput']}</label>
           <input type="text" class="form-control" id="email" name="email" value="{$elementsArr['email']['value']}" >
         </div>
         <div class="form-group">
