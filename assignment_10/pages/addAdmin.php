@@ -77,17 +77,27 @@ function addData($post){
 
       $pdo = new Pdo_methods();
 
-      $sql = "INSERT INTO admins (name, email, password, status) VALUES (:name, :email, :password, :status)";
+      $emailsql = "SELECT * FROM admins WHERE email=:email";
 
       $bindings = [
-        [':name',$post['name'],'str'],
-        [':email',$post['email'],'str'],
-        [':password',password_hash($post['password'], PASSWORD_DEFAULT),'str'],
-        [':status',$post['status'],'str']
+          [':email', $_POST['email'], 'str'],
       ];
+      $record = $pdo->selectBinded($emailsql, $bindings);
 
-      $result = $pdo->otherBinded($sql, $bindings);
+      if(count($record) != 0){
+        $result = "error";
+      }else{
+        $sql = "INSERT INTO admins (name, email, password, status) VALUES (:name, :email, :password, :status)";
 
+        $bindings = [
+          [':name',$post['name'],'str'],
+          [':email',$post['email'],'str'],
+          [':password',password_hash($post['password'], PASSWORD_DEFAULT),'str'],
+          [':status',$post['status'],'str']
+        ];
+      
+        $result = $pdo->otherBinded($sql, $bindings);
+      }
       if($result == "error"){
         return getForm("<p>There was a problem processing your form</p>", $elementsArr);
       }
