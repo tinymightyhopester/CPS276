@@ -52,7 +52,7 @@ $elementsArr = [
         "errorOutput"=>"",
         "type"=>"text",
         "value"=>"123 Somestreet",
-        "regex"=>"name"
+        "regex"=>"address"
     ],
     "city"=>[
 	    "errorMessage"=>"<span style='color: red; margin-left: 15px;'>City cannot be blank</span>",
