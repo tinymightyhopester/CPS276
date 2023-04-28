@@ -85,7 +85,7 @@ function addData($post){
       $record = $pdo->selectBinded($emailsql, $bindings);
 
       if(count($record) != 0){
-        $result = "error";
+        return getForm("<p>That email is already in use</p>", $elementsArr);
       }else{
         $sql = "INSERT INTO admins (name, email, password, status) VALUES (:name, :email, :password, :status)";
 
