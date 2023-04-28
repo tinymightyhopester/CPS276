@@ -24,22 +24,25 @@ if(isset($_GET)){
     else if($_GET['page'] === "addAdmin"){
         require_once('pages/addAdmin.php');
         security();
-        $nav = setNav();
         accessStatusLevel();
+        print_r($_SESSION);
+        $nav = setNav();
         $result = init();
     }
     
     else if($_GET['page'] === "deleteAdmins"){
         require_once('pages/deleteAdmins.php');
         security();
-        $nav = setNav();
         accessStatusLevel();
+        print_r($_SESSION);
+        $nav = setNav();
         $result = init();
     }
 
     else if($_GET['page'] === "welcome"){
         require_once('pages/welcome.php');
         security();
+        print_r($_SESSION);
         $nav = setNav();
         $result = init();
     }
@@ -50,7 +53,7 @@ if(isset($_GET)){
         $nav = <<<HTML
         <nav>
         </nav>
-        HTML;;
+        HTML;
         $result = init();
 
     }
@@ -77,7 +80,7 @@ function security(){
 }
 function accessStatusLevel(){
     if($_SESSION['status'] !== "admin"){
-        header('location'.$path);
+        header('location:index.php?page=logout');
     }
 }
 function setNav(){
